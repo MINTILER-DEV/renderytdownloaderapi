@@ -11,7 +11,7 @@ def download_video(url, resolution):
         stream = yt.streams.filter(progressive=True, file_extension='mp4', resolution=resolution).first()
         if stream:
             # Define the download path
-            download_path = stream.download(output_path='/path/to/download/directory', filename='video.mp4')  # Change this path
+            download_path = stream.download(output_path='/cache', filename='video.mp4')  # Change this path
             return download_path, None  # Return the path of the downloaded video
         else:
             return None, "Video with the specified resolution not found."
